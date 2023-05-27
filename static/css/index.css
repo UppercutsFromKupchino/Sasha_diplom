@@ -43,6 +43,14 @@
 .header-bar-bottom div {
     cursor: pointer;
 }
+.header-body-left {
+    margin-top: 6%;
+    margin-left: 10%;
+}
+.header-body-left > div:nth-child(1) {
+    font-size: 70px;
+    width: 60%;
+}
 body {
     margin: 0;
 }
