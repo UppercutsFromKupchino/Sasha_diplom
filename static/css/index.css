@@ -2,7 +2,7 @@
     background-color: #23232b;
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
-    height: 100vh;
+    padding-bottom: 5%;
 }
 .header-bar-top {
     display: flex;
@@ -44,12 +44,37 @@
     cursor: pointer;
 }
 .header-body-left {
-    margin-top: 6%;
+    width: 60%;
+}
+.header-body {
+    margin-top: 7%;
     margin-left: 10%;
 }
 .header-body-left > div:nth-child(1) {
-    font-size: 70px;
-    width: 60%;
+    font-size: 60px;
+    margin-bottom: 5%;
+}
+.header-body-left > div:nth-child(2) {
+    font: 20px/30px Montserrat-Regular;
+}
+.index-body {
+    padding: 0 10% 0 10%;
+    padding-top: 15%;
+    display: flex;
+}
+.index-body-left {
+    width: 30%;
+}
+.index-body-left > img {
+    margin: 1%;
+    border-radius: 100%;
+    width: 100%;
+}
+.index-body-right {
+    margin-left: 10%;
+}
+.index-body-right > div:nth-child(1) {
+    font: 16px/24px Montserrat-Medium;
 }
 body {
     margin: 0;
