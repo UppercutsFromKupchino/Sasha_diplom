@@ -43,43 +43,10 @@
 .header-bar-bottom div {
     cursor: pointer;
 }
-.header-body-left {
-    width: 60%;
-}
-.header-body {
-    margin-top: 7%;
-    margin-left: 10%;
-}
-.header-body-left > div:nth-child(1) {
-    font-size: 60px;
-    margin-bottom: 5%;
-}
-.header-body-left > div:nth-child(2) {
-    font: 20px/30px Montserrat-Regular;
-}
-.index-body {
-    padding: 10%;
-    display: flex;
-}
-.index-body-left {
-    width: 50%;
-}
-.index-body-left > img {
-    margin: 1%;
-    border-radius: 100%;
-    width: 100%;
-}
-.index-body-right {
-    margin-left: 10%;
-}
-.index-body-right > div:nth-child(1) {
-    font: 16px/24px Montserrat-Medium;
-}
 a {
     color: #FFFFFF;
     text-decoration: none;
 }
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
 }

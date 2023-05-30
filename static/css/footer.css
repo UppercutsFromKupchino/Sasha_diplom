@@ -1,0 +1,48 @@
+.footer-form-container {
+    display: flex;
+    justify-content: center;
+    background-color: #f2f5f9;
+    padding: 5% 0 5% 0;
+}
+.footer-form {
+    width: 70%;
+}
+.footer-form > div:nth-child(1) {
+    font: 36px/42px Montserrat-Bold;
+    padding-bottom: 2%;
+}
+.footer-form > div:nth-child(2) {
+    font: 20px/36px Montserrat-Regular;
+    padding-bottom: 2%;
+}
+.footer-form-inputs {
+    display: flex;
+}
+.footer-form-inputs > input {
+    height: 35px;
+    width: 33%;
+    margin-right: 4%;
+    outline: none !important;
+    background: transparent;
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 22px;
+    padding: 1%;
+}
+.footer-form-bottom {
+    display: flex;
+    padding-top: 2%;
+    align-items: center;
+}
+.footer-form-bottom > div:nth-child(1) {
+    padding: 2% 6% 2% 6%;
+    background-color: #ff4d3b;
+    color: #fff;
+    font: 18px/25px Montserrat-Bold;
+    border-radius: 10px;
+    margin-right: 5%;
+}
+.footer-form-bottom > div:nth-child(2) {
+    font: 18px/14px Montserrat-Regular;
+    color: #5e676d;
+}
