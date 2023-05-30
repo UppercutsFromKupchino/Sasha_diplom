@@ -1,52 +1,7 @@
-.header {
-    background-color: #23232b;
-    color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
-    padding-bottom: 2%;
+.teachers-body {
+    margin: 5% 5% 5% 5%;
 }
-.header-bar-top {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #4e4c4c;
-    padding-bottom: 1%;
-}
-.header-bar-top-left {
-    margin-left: 15%;
-    font-size: 45px;
-}
-.header-bar {
-    padding-top: 2%;
-}
-.header-bar-top-right {
-    display: flex;
-    width: 27%;
-    justify-content: space-between;
-    margin-right: 15%;
-    align-items: center;
-}
-.phone-number {
-    font: 20px Montserrat-Bold;
-}
-.button-order {
-    border: 1px solid #FFFFFF;
-    padding: 2% 5% 2% 5%;
-    border-radius: 25px;
-    cursor: pointer;
-    font: 16px Montserrat-Regular;
-}
-.header-bar-bottom {
-    font: 20px/30px Montserrat-Regular;
-    display: flex;
-    padding: 1% 0 1% 0;
-    justify-content: space-around;
-}
-.header-bar-bottom div {
-    cursor: pointer;
-}
-a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-body {
-    margin: 0;
+.teachers-body > div:nth-child(1) {
+    color: #231f20;
+    font: 40px Montserrat-Bold;
 }

@@ -58,7 +58,7 @@
     font: 20px/30px Montserrat-Regular;
 }
 .index-body {
-    padding: 10%;
+    padding: 10% 10% 5% 10%;
     display: flex;
 }
 .index-body-left {
@@ -81,5 +81,9 @@ a {
 }
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
+}
+a {
+    color:#FFFFFF;
+    text-decoration: none;
 }
