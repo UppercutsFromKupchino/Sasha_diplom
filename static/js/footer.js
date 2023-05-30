@@ -45,13 +45,13 @@ Vue.component('footer-vue', {
                 if(response.ok) {
                     return response.json();
                 } else {
-                    this.message = 'Ошибка взаимодействия с сервером. Проверьте подключение к сети';
+                    this.message = 'Ошибка взаимодействия с сервером. Проверьте подключение к сети.';
                 }
             }).then((json) => {
                 if(json.message == 'ok') {
                     this.message = 'Заявка успешно отправлена.';
                 } else {
-                    this.message = 'Ошибка взаимодействия с базой данных';
+                    this.message = 'Ошибка записи данных. Обратитесь к администратору.';
                 }
             })
         }

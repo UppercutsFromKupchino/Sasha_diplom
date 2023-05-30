@@ -1,7 +1,55 @@
 .teachers-body {
-    margin: 5% 5% 5% 5%;
+    margin: 5% 10% 5% 10%;
 }
 .teachers-body > div:nth-child(1) {
     color: #231f20;
     font: 40px Montserrat-Bold;
+}
+.courses-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 3%;
+}
+.courses-item {
+    padding: 1%;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    font: 20px Montserrat-Regular;
+}
+.teachers-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5%;
+}
+.teachers-item {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    padding: 4%;
+    box-shadow: 0 8px 25px rgb(0 0 0 / 10%);
+    margin: 1%;
+    align-items: center;
+    text-align: center;
+}
+.teachers-item > img {
+    width: 60%;
+    border-radius: 50%;
+    margin-bottom: 5%;
+}
+.teacher-name {
+    font: 23px Montserrat-Bold;
+    margin-bottom: 2%;
+}
+.teacher-description {
+    font: 18px Montserrat-Regular;
+}
+.empty-teachers {
+    font: 37px Montserrat-Bold;
+    margin-top: 6%;
+    text-align: center;
+}
+.active {
+    background-color: #000;
+    color: #fff;
 }
