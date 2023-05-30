@@ -1,0 +1,47 @@
+.footer-top {
+    padding: 4% 10% 4% 10%;
+    background-color: #f2f5f9;
+}
+.footer-top > div:nth-child(1) {
+    font: 36px/42px Montserrat-Bold;
+    color: #231f20;
+}
+.footer-top > div:nth-child(2) {
+    font: 20px/36px Montserrat-Regular;
+    color: #231f20;
+    margin-top: 2%;
+}
+.footer-inputs {
+    width: 83%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+.footer-inputs > input {
+    background: transparent;
+    width: 27%;
+    height: 30px;
+    border: 0;
+    background-color: #fff;
+    padding: 2%;
+    border-radius: 15px;
+    font-size: 20px;
+}
+.footer-form-bottom {
+    display: flex;
+    margin-top: 3%;
+    align-items: center;
+}
+.footer-form-bottom > div:nth-child(1) {
+    background-color: #ff4d3b;
+    border: 1px solid #ff4d3b;
+    color: #fff;
+    border-radius: 10px;
+    font: 25px Montserrat-Bold;
+    padding: 2% 4% 2% 4%;
+}
+.footer-form-bottom > div:nth-child(2) {
+    margin-left: 5%;
+    color: #5e676d;
+    font: 16px Montserrat-Regular;
+}

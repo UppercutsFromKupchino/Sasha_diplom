@@ -1,0 +1,7 @@
+.teachers-body {
+    margin: 5% 5% 5% 5%;
+}
+.teachers-body > div:nth-child(1) {
+    color: #231f20;
+    font: 40px Montserrat-Bold;
+}
