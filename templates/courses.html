@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Курсы дизайна онлайн</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/index.css"/>
     <link rel="stylesheet" href="static/css/footer.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+    <title>Онлайн-программы</title>
 </head>
 <body>
     <div class="header">
@@ -30,29 +32,21 @@
         </div>
         <div class="header-body">
             <div class="header-body-left">
-                <div>Онлайн академия дизайн-профессий Pentaschool</div>
-                <div>Онлайн-обучение дизайну с нуля до PRO.<br>Программы от экспертов международного уровня</div>
-                <div></div>
+                <div>Курсы по всем направлениям дизайна</div>
+                <div>Выбирайте подходящий курс и начинайте учиться прямо сейчас.</div>
             </div>
             <div class="header-body-right">
-                <video src="/static/videos/video-index.mp4" width="100%" height="100%" autoplay="autoplay" loop="loop" preload="auto" muted="false" playsinline="playsinline"></video>
+                <img src="/static/images/photos/courses.webp"/>
             </div>
         </div>
     </div>
-    <div class="index-body">
-        <div class="index-body-left">
-            <img src="static/images/photos/founder-photo.jpg">
-        </div>
-        <div class="index-body-right">
-            <div>РУКОВОДИТЕЛЬ АКАДЕМИИ ДИЗАЙНА PENTASCHOOL</div>
-            <div>ЯСМИНА ЕФИМОВА</div>
-            <div>Практикующий графический дизайнер, автор курсов и эксперт. Сотрудничала с такими брендами как Эксмо, Орматек, Calve, Экоокна и ОкнаРоста, Gerber. Работала графическим дизайнером, арт-директором и бренд-стратегом, а сегодня руководит штатом дизайнеров и творческой командой.</div>
-            <div>РУКОВОДИТЕЛЬ АКАДЕМИИ ДИЗАЙНА PENTASCHOOL</div>
-        </div>
+    <div class="courses" id="courses">
+        <courses-body></courses-body>
     </div>
     <div class="footer" id="footer">
         <footer-vue></footer-vue>
     </div>
     <script src="static/js/footer.js"></script>
+    <script src="static/js/courses.js"></script>
 </body>
 </html>

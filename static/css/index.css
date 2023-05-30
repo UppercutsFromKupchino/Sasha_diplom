@@ -46,9 +46,14 @@
 .header-body-left {
     width: 60%;
 }
+.header-body-right {
+    height: 400px;
+}
 .header-body {
     margin-top: 7%;
     margin-left: 10%;
+    display: flex;
+
 }
 .header-body-left > div:nth-child(1) {
     font-size: 60px;
