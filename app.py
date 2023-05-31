@@ -35,6 +35,21 @@ def init_teachers():
             'course_groups': data_cg,
             'ok': True}
 
+@app.route('/api/get_courses', methods=['POST'])
+def get_courses():
+    conn = psycopg2.connect(dbname="diplom_sasha", user="postgres", password="alp37327", host="localhost")
+    cursor = conn.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
+    try:
+        cursor.execute("SELECT course.photo, course.id_, course.name_ as course_name, course.duration, course.description, course.price, course_group.name_ as course_group_name from course join course_group on course_group.id_=course.course_group_id")
+        data = cursor.fetchall()
+        cursor.close()
+        conn.close()
+    except psycopg2.OperationalError as e:
+        print(e)
+        return {'message': 'db_error'}
+    return {'courses': data,
+            'ok': True}
+
 @app.route('/api/get_teachers', methods=['POST'])
 def get_teachers():
     conn = psycopg2.connect(dbname="diplom_sasha", user="postgres", password="alp37327", host="localhost")
