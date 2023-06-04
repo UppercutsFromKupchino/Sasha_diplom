@@ -1,0 +1,96 @@
+.reviews {
+    margin-bottom: 2%;
+}
+.review-top {
+    display: flex;
+    justify-content: space-between;
+}
+.review-text {
+    margin-top: 5%;
+}
+.review-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10% 0 10%;
+    font: 20px Montserrat-Regular;
+    flex-wrap: wrap;
+}
+.review-item {
+    margin: 2%;
+    border: 2px solid #ccc;
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 1%;
+    width: 20%;
+    height: 115px;
+}
+.review-title {
+    display: flex;
+    justify-content: center;
+    font: 30px Montserrat-Bold;
+    margin: 3% 0 1% 0;
+}
+.course-list {
+    display: flex;
+    margin-bottom: 2%;
+}
+.review-form {
+    margin-left: 10%;
+}
+.course-item {
+    font: 20px Montserrat-Regular;
+    padding: 1%;
+    background-color: #f2f5f9;
+    margin: 0 2% 0 0%;
+    cursor: pointer;
+    border-radius: 25px;
+}
+.review-form > div:nth-child(1) {
+    font: 30px Montserrat-Bold;
+    margin-bottom: 2%;
+    padding: 1%;
+}
+.focused {
+    background-color: black;
+    color: #ffffff;
+}
+.review-inputs {
+    margin-bottom: 1%;
+}
+.review-inputs-top > input {
+    margin-right: 2%;
+    border: 0;
+    background-color: #f2f5f9;
+    height: 30px;
+    width: 13%;
+    padding: 1%;
+    border-radius: 15px;
+    font: 20px Montserrat-Regular;
+    outline: none!important;
+}
+.review-inputs-top {
+    margin-bottom: 1%;
+}
+.review-inputs > input {
+    margin-right: 2%;
+    border: 0;
+    background-color: #f2f5f9;
+    height: 50px;
+    width: 30%;
+    padding: 1%;
+    border-radius: 15px;
+    font: 20px Montserrat-Regular;
+    outline: none!important;
+}
+.review-button {
+    background-color: #ff4d3b;
+    border: 1px solid #ff4d3b;
+    color: #fff;
+    border-radius: 10px;
+    font: 25px Montserrat-Bold;
+    padding: 1% 3% 1% 3%;
+    width: 12%;
+    text-align: center;
+    cursor: pointer;
+}

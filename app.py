@@ -8,6 +8,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
+
 @app.route('/teachers')
 def teachers():
     return render_template('teachers.html')
@@ -39,12 +43,43 @@ def init_teachers():
             'course_groups': data_cg,
             'ok': True}
 
+@app.route('/api/init_reviews', methods=['GET'])
+def init_reviews():
+    conn = psycopg2.connect(dbname="diplom_sasha", user="postgres", password="alp37327", host="localhost")
+    cursor = conn.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
+    try:
+        cursor.execute("select review.id_, review.text_, review.name_ as review_name, course.name_ as course_name from review join course on course.id_=review.course_id")
+        data = cursor.fetchall()
+        cursor.close()
+        conn.close()
+    except psycopg2.OperationalError as e:
+        print(e)
+        return {'message': 'db_error',
+                'ok': False}
+    return {'reviews': data,
+            'ok': True}
+
 @app.route('/api/get_courses', methods=['POST'])
 def get_courses():
     conn = psycopg2.connect(dbname="diplom_sasha", user="postgres", password="alp37327", host="localhost")
     cursor = conn.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
     try:
         cursor.execute("SELECT course.photo, course.id_, course.name_ as course_name, course.duration, course.description, course.price, course_group.name_ as course_group_name from course join course_group on course_group.id_=course.course_group_id")
+        data = cursor.fetchall()
+        cursor.close()
+        conn.close()
+    except psycopg2.OperationalError as e:
+        print(e)
+        return {'message': 'db_error'}
+    return {'courses': data,
+            'ok': True}
+
+@app.route('/api/get_courses_review', methods=['GET'])
+def get_courses_review():
+    conn = psycopg2.connect(dbname="diplom_sasha", user="postgres", password="alp37327", host="localhost")
+    cursor = conn.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
+    try:
+        cursor.execute("SELECT course.id_, course.name_ from course")
         data = cursor.fetchall()
         cursor.close()
         conn.close()
@@ -82,6 +117,20 @@ def add_request():
         cursor.close()
         conn.close()
         return {'message': 'ok'}
+    except psycopg2.OperationalError as e:
+        print(e)
+        return {'message': 'db_error'}
+    
+@app.route('/api/add_review', methods=['POST'])
+def add_review():
+    conn = psycopg2.connect(dbname="diplom_sasha", user="postgres", password="alp37327", host="localhost")
+    cursor = conn.cursor()
+    try:
+        cursor.execute(f"INSERT INTO review(phone, name_, text_, course_id) VALUES('{request.form['phone']}', '{request.form['name']}', '{request.form['text']}', '{request.form['course_id']}')")
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return {'ok': True}
     except psycopg2.OperationalError as e:
         print(e)
         return {'message': 'db_error'}

@@ -7,9 +7,46 @@
     <link rel="stylesheet" href="static/css/index.css"/>
     <link rel="stylesheet" href="static/css/footer.css"/>
     <link rel="stylesheet" href="static/css/reviews.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
     <title>Отзывы</title>
 </head>
 <body>
-    
+    <div class="header">
+        <div class="header-bar">
+            <div class="header-bar-top">
+                <a class="header-bar-top-left" href="/">Десигн</a>
+                <div class="header-bar-top-right">
+                    <svg id="logo-whatsapp" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none">
+                        <path d="M14 1C6.82 1 1 6.82 1 14c0 2.294.6 4.447 1.644 6.319l-1.617 5.789a.702.702 0 0 0 .866.865l5.792-1.616A12.937 12.937 0 0 0 14 27c7.18 0 13-5.82 13-13C27 6.82 21.18 1 14 1Z" stroke="#fff" stroke-miterlimit="10" stroke-linejoin="round"/>
+                        <path d="M20.517 18.092c-.277.774-1.635 1.519-2.245 1.573-.61.056-1.182.275-3.992-.828-3.381-1.327-5.516-4.778-5.682-4.998-.166-.222-1.358-1.795-1.358-3.424 0-1.63.86-2.431 1.165-2.761.305-.332.665-.414.888-.414.221 0 .443 0 .637.008.237.009.5.021.748.572.296.655.943 2.293 1.026 2.458.083.166.138.36.028.58-.111.22-.167.358-.332.552-.166.193-.349.431-.499.58-.166.164-.34.345-.146.675.194.331.861 1.416 1.85 2.293 1.272 1.128 2.342 1.477 2.675 1.644.333.165.527.138.721-.084.194-.22.832-.966 1.053-1.297.222-.332.444-.276.749-.166.305.11 1.94.912 2.273 1.077.332.166.554.248.637.386.081.137.081.8-.196 1.574Z" fill="#fff"/>
+                    </svg>
+                    <div class="phone-number">8 800 555-35-35</div>
+                    <div class="button-order">Заказать звонок</div>
+                </div>
+            </div>
+            <div class="header-bar-bottom">
+                <a href="/courses">Онлайн-программы</a>
+                <a href="/teachers">Преподаватели</a>
+                <a href="/reviews">Отзывы</a>
+            </div>
+        </div>
+        <div class="header-body">
+            <div class="header-body-left">
+                <div>Курсы по всем направлениям дизайна</div>
+                <div>Выбирайте подходящий курс и начинайте учиться прямо сейчас.</div>
+            </div>
+            <div class="header-body-right">
+                <img src="/static/images/photos/courses.webp"/>
+            </div>
+        </div>
+    </div>
+    <div class="reviews" id="reviews">
+        <reviews-vue></reviews-vue>
+    </div>
+    <div class="footer" id="footer">
+        <footer-vue></footer-vue>
+    </div>
+    <script src="/static/js/footer.js"></script>
+    <script src="/static/js/reviews.js"></script>
 </body>
 </html>
