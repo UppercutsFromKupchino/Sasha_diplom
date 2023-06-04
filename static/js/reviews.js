@@ -16,7 +16,7 @@ Vue.component('reviews-vue', {
         <div class="review-form">
             <div>Добавить отзыв</div>
             <div class="course-list">
-                <div @click="changeActive(course.id_, active)" v-for="course in courses" class="course-item" :class="{focused: course.id_ == active}">{{ course.name_ }}</div>
+                <div @click="changeActive(course.id_)" v-for="course in courses" class="course-item" :class="{focused: course.id_ == active}">{{ course.name_ }}</div>
             </div>
             <div class="message" v-if="message_form">{{ message_form }}</div>
             <div class="review-inputs">
@@ -46,6 +46,14 @@ Vue.component('reviews-vue', {
            this.active = id;
         },
         sendReview: function() {
+            if(!this.name || !this.phone || !this.text) {
+                this.message_form = 'Все поля обязательны к заполнению';
+                return;
+            }
+            if(this.phone.length < 11) {
+                this.message_form = 'Введите валидный номер телефона';
+                return;
+            }
             console.log('yo');
             var form_data = new FormData();
             form_data.append('name', this.name);

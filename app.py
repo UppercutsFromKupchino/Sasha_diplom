@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, url_for, request
 import psycopg2, psycopg2.extras
-import json
 
 app = Flask(__name__)
 
@@ -10,7 +9,7 @@ def index():
 
 @app.route('/admin')
 def admin():
-    return render_template('admin.html')
+    return render_template('admin.html', id=1)
 
 @app.route('/teachers')
 def teachers():
@@ -57,6 +56,48 @@ def init_reviews():
         return {'message': 'db_error',
                 'ok': False}
     return {'reviews': data,
+            'ok': True}
+
+@app.route('/api/take_request', methods=['POST'])
+def take_request():
+    conn = psycopg2.connect(dbname="diplom_sasha", user="postgres", password="alp37327", host="localhost")
+    cursor = conn.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
+    try:
+        if(request.form['request-type'] == 0):
+            cursor.execute(f"update cons_request set status_id=2, admin_id={request.form['admin-id']} where id_={request.form['request-id']}")
+        else:
+            cursor.execute(f"update course_request set status_id=2, admin_id={request.form['admin-id']} where id_={request.form['request-id']}")
+        conn.commit()
+        cursor.close()
+        conn.close()
+    except psycopg2.OperationalError as e:
+        print(e)
+        return {'message': 'db_error',
+                'ok': False}
+    return {'ok': True}
+
+@app.route('/api/init_admin', methods=['POST'])
+def init_admin():
+    conn = psycopg2.connect(dbname="diplom_sasha", user="postgres", password="alp37327", host="localhost")
+    cursor = conn.cursor(cursor_factory = psycopg2.extras.RealDictCursor)
+    try:
+        cursor.execute("select course_request.id_, course_request.phone, course_request.name_ as request_name, course_request.course_id, course_request.admin_id, course_request.status_id, status.name_ from course_request join status on status.id_=course_request.status_id WHERE status_id=1")
+        data_course_all = cursor.fetchall()
+        cursor.execute(f"select course_request.id_, course_request.phone, course_request.name_ as request_name, course_request.course_id, course_request.admin_id, course_request.status_id, status.name_ from course_request join status on status.id_=course_request.status_id WHERE course_request.admin_id={request.form['admin_id']}")
+        data_course_admin = cursor.fetchall()
+        cursor.execute("select cons_request.id_, cons_request.name_ as cons_request_name, cons_request.phone, cons_request.admin_id, cons_request.status_id, status.name_ from cons_request join status on status.id_=cons_request.status_id WHERE status_id=1")
+        data_cons_all = cursor.fetchall()
+        cursor.execute(f"select cons_request.id_, cons_request.name_ as cons_request_name, cons_request.phone, cons_request.admin_id, cons_request.status_id, status.name_ from cons_request join status on status.id_=cons_request.status_id WHERE cons_request.admin_id={request.form['admin_id']}")
+        data_cons_admin = cursor.fetchall()
+        cursor.close()
+        conn.close()
+    except psycopg2.OperationalError as e: # исправить add_cons_request
+        print(e)
+        return {'message': 'db_error'}
+    return {'data_course_all': data_course_all,
+            'data_course_admin': data_course_admin,
+            'data_cons_all': data_cons_all,
+            'data_cons_admin': data_cons_admin,
             'ok': True}
 
 @app.route('/api/get_courses', methods=['POST'])
@@ -112,7 +153,7 @@ def add_request():
     conn = psycopg2.connect(dbname="diplom_sasha", user="postgres", password="alp37327", host="localhost")
     cursor = conn.cursor()
     try:
-        cursor.execute(f"INSERT INTO cons_request(phone, name_, email) VALUES('{request.form['phone']}', '{request.form['name']}', '{request.form['email']}')")
+        cursor.execute(f"INSERT INTO cons_request(phone, name_, email, status_id) VALUES('{request.form['phone']}', '{request.form['name']}', '{request.form['email']}', '1')")
         conn.commit()
         cursor.close()
         conn.close()

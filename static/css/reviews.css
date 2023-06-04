@@ -94,3 +94,7 @@
     text-align: center;
     cursor: pointer;
 }
+.message {
+    margin-bottom: 2%;
+    font: 25px Montserrat-Bold;
+}

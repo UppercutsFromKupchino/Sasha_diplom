@@ -1,0 +1,86 @@
+.admin-id {
+    display: none;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    background-color: #000;
+    color: #fff;
+}
+.bar-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font: 22px Montserrat-Regular;
+}
+.bar-1 > div {
+    width: 50%;
+    text-align: center;
+    border: 1px solid #626161;
+    padding: 1%;
+    border-radius: 0 0 25px 25px;
+}
+.bar-2 {
+    display: flex;
+    justify-content: space-between;
+    font: 18px Montserrat-Regular;
+}
+.bar-2 > div {
+    text-align: center;
+    width: 25%;
+    border: 1px solid #626161;
+    padding: 1%;
+    border-radius: 0 0 25px 25px;
+}
+.active {
+    background-color: #424242;
+    color: #fff;
+}
+.request-container {
+    margin: 2% 17% 0 17%;
+    font: 20px Montserrat-Regular;
+}
+.request-bar {
+    display: flex;
+    justify-content: space-between;
+}
+.request-item {
+    display: flex;
+    justify-content: space-between;
+}
+.request-bar > div {
+    width: 25%;
+    text-align: center;
+    padding: 2%;
+    border: 1px solid #000;
+    background-color: #85b0ff;
+}
+.request-item > div {
+    width: 25%;
+    text-align: center;
+    padding: 2%;
+    border: 1px solid #000;
+}
+.request-item > div:nth-child(4) {
+    cursor: pointer;
+}
+.header > a:nth-child(1) {
+    font: 30px Montserrat-Bold;
+}
+.header > a:nth-child(2) {
+    font: 20px Montserrat-Bold;
+}
+.header > a {
+    text-decoration: none;
+    color: #fff;
+}
+.message {
+    margin: 2% 17% 0 17%;
+    font: 30px Montserrat-Bold;
+}
+body {
+    margin: 0;
+}
