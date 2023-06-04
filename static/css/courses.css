@@ -47,3 +47,36 @@
     margin-right: 3%;
     cursor: pointer;
 }
+.course-button {
+    padding: 3%;
+    background-color: #ff4d3b;
+    width: 20%;
+    border-radius: 20px 20px 20px 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-right: 4%;
+}
+.course-form {
+    display: flex;
+    margin-top: 4%;
+    align-items: center;
+}
+.course-inputs {
+    display: flex;
+}
+.course-inputs > input {
+    margin-right: 4%;
+    height: 20px;
+    background: transparent;
+    border: 0;
+    background-color: #f2f5f9;
+    padding: 6%;
+    border-radius: 20px 20px 20px 20px;
+    outline: none!important;
+}
+.closed {
+    display: none;
+}
+.course-message {
+    margin-top: 5%;
+}

@@ -16,6 +16,10 @@ def teachers():
 def courses():
     return render_template('courses.html')
 
+@app.route('/reviews')
+def reviews():
+    return render_template('reviews.html')
+
 @app.route('/api/init_teachers', methods=['POST'])
 def init_teachers():
     conn = psycopg2.connect(dbname="diplom_sasha", user="postgres", password="alp37327", host="localhost")
@@ -78,6 +82,21 @@ def add_request():
         cursor.close()
         conn.close()
         return {'message': 'ok'}
+    except psycopg2.OperationalError as e:
+        print(e)
+        return {'message': 'db_error'}
+    
+@app.route('/api/add_request_course', methods=['POST'])
+def add_request_course():
+    conn = psycopg2.connect(dbname="diplom_sasha", user="postgres", password="alp37327", host="localhost")
+    cursor = conn.cursor()
+    try:
+        cursor.execute(f"INSERT INTO course_request(phone, name_, course_id, status_id) VALUES('{request.form['phone']}', '{request.form['name']}', '{request.form['course_id']}', '1')")
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return {'ok': True,
+                'message': ''}
     except psycopg2.OperationalError as e:
         print(e)
         return {'message': 'db_error'}
